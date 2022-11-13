@@ -1,0 +1,23 @@
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.table__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px;
+}
+
+
+table, td, th{
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+
+td, th{
+  padding:5px
+}
