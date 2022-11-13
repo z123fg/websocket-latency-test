@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
-const socket = io("http://localhost", {
+const socket = io("http://44.212.59.151", {
     extraHeaders: {
         Authorization: "Bearer authorization_token_here",
     },
