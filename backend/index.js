@@ -41,7 +41,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("send_message", (id, message) => {
-        io.to(id).emit("receive_message", { sender: getActiveUser(id), message });
+        io.to(id).emit("receive_message", { sender: getActiveUser(socket.id), message });
     });
     let logoffTimer;
     socket.on("daemon", () => {
