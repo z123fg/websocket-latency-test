@@ -45,9 +45,10 @@ io.on("connection", (socket) => {
     });
     let logoffTimer;
     socket.on("daemon", () => {
+        
         clearTimeout(logoffTimer);
         logoffTimer = setTimeout(function () {
-            socket.emit("logoff", { reason: "Logged off due to inactivity" });
+            io.to(socket.id).emit("logoff", { reason: "Logged off due to inactivity" });
             exitRoom(socket.id);
             io.to(user?.room).emit("update_room", getIndividualRoomUsers(user.room));
         }, 1000 * 300);
